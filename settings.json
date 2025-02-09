@@ -1,0 +1,27 @@
+{
+    "general": {
+        "random_state": 42,
+        "status": "test",
+        "datetime_format": "%d.%m.%Y_%H.%M",
+        "data_dir": "data",
+        "models_dir": "models",
+        "vectorizers_dir": "vectorizers",
+        "results_dir": "predictions"
+    },
+    "train": {
+        "table_name": "train.csv",
+        "data_sample": null,
+        "dataset_size": 32000, 
+        "test_size": 0.2,
+        "preprocessing_method": "basic",
+        "vectorizer": "TfidfVectorizer",
+        "model": "Linear SVC",
+        "data_url": "https://media.githubusercontent.com/media/Elllmaan/Epam/refs/heads/main/train.csv"
+    },
+    "inference": {
+        "inp_table_name": "test.csv",
+        "model_name": null,
+        "vectorizer_name": null,
+        "data_url": "https://media.githubusercontent.com/media/Elllmaan/Epam/refs/heads/main/test.csv"
+    }
+}

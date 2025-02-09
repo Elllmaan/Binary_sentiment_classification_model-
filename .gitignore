@@ -1,0 +1,43 @@
+# Ignore Python bytecode & cache files
+__pycache__/
+*.py[cod]
+
+# Ignore Virtual Environments
+myenv/
+venv/
+.env
+
+# Ignore data files (but keep folder structure with .gitkeep)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Ignore trained models & vectorizers (but keep directory)
+outputs/models/*
+!outputs/models/.gitkeep
+outputs/vectorizers/*
+!outputs/vectorizers/.gitkeep
+
+# Ignore generated predictions, plots, and logs
+outputs/predictions/*
+!outputs/predictions/.gitkeep
+outputs/figures/*
+!outputs/figures/.gitkeep
+
+# Ignore MLflow tracking & logs
+mlruns/
+mlflow.log
+mlflow/
+
+# Ignore all CSV, Pickle, and large datasets (except for .gitkeep)
+*.csv
+*.pickle
+
+# Ignore editor/project-specific files
+.vscode/
+.idea/
+*.log
+
+# Ignore dependency management files (if not needed)
+pip-log.txt
