@@ -244,7 +244,7 @@ F1 Score: 89.37%
 ## 5. Configuration with settings.json
 
 The file settings.json defines important parameters for both training and inference stages. Below is an example:
-
+```
 {
     "general": {
         "random_state": 42,
@@ -272,7 +272,7 @@ The file settings.json defines important parameters for both training and infere
         "data_url": "https://media.githubusercontent.com/media/Elllmaan/Epam/refs/heads/main/test.csv"
     }
 }
-
+```
 
 You can override any of these settings to experiment with different preprocessing methods, vectorizers, or models. The code in src/train/train.py and src/inference/run_inference.py references these settings to configure the entire pipeline.
 
@@ -290,7 +290,7 @@ You can find the corresponding metrics in outputs/predictions/metrics_<timestamp
 ## 7. Project Structure
 
 A high-level overview of the main folders and files:
-
+```
 .
 ├── README.md              
 ├── notebooks
@@ -320,3 +320,4 @@ A high-level overview of the main folders and files:
 ├── requirements.txt
 ├── settings.json
 └── .env (optional)
+```
