@@ -14,8 +14,8 @@ from sklearn.metrics import accuracy_score
 from sklearn.linear_model import LogisticRegression
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.svm import LinearSVC
-from sklearn.utils import shuffle
-from sklearn.utils import gen_batches
+from sklearn.utils import shuffle # unused import
+from sklearn.utils import gen_batches # unused import
 
 import nltk
 from dotenv import load_dotenv
@@ -29,7 +29,7 @@ nltk_data_dir = os.path.join(PROJECT_ROOT, 'nltk_data')
 os.makedirs(nltk_data_dir, exist_ok=True)
 nltk.data.path.append(nltk_data_dir)
 
-
+# you can move it to utils
 def download_nltk_package(package):
     try:
         nltk.data.find(f'tokenizers/{package}')
@@ -53,7 +53,7 @@ mlflow.autolog(log_datasets=False)
 sys.path.append(PROJECT_ROOT)
 
 
-from src.utils import configure_logging
+from src.utils import configure_logging # all imports should be at the top
 from src.nlp_utils import select_preprocessor, select_vectorizer
 
 
@@ -98,6 +98,41 @@ class DataProcessor:
         logging.info(f"Selected vectorizer: {vectorizer_type}")
 
     def prepare_data(self, max_rows: int = None):
+        # good practice is to add docstrings to all methods. example:
+        """
+        Prepare data for training by performing various preprocessing steps.
+
+        This method performs the following steps:
+        1. Extracts data from the specified training path.
+        2. Removes duplicate rows based on the 'review' column.
+        3. Validates the presence of required columns ('review' and 'sentiment').
+        4. Converts sentiment labels to numeric values (1 for positive, 0 for negative).
+        5. Samples the dataset to a specified size if needed.
+        6. Applies text preprocessing to the 'review' column.
+        7. Saves the processed data to a specified path.
+        8. Vectorizes the text data using the specified vectorizer.
+
+        Parameters:
+        -----------
+        max_rows : int, optional
+            The maximum number of rows to process. If None, all rows are processed.
+
+        Returns:
+        --------
+        X : scipy.sparse.csr.csr_matrix
+            The vectorized text data.
+        y : pandas.Series
+            The numeric sentiment labels.
+
+        Raises:
+        -------
+        SystemExit
+            If the input CSV does not contain the required 'review' and 'sentiment' columns.
+
+        Logs:
+        -----
+        Logs various information and error messages during the data preparation process.
+        """
 
         logging.info("Preparing data for training...")
         df = self.data_extraction(TRAIN_PATH)

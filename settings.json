@@ -15,7 +15,7 @@
         "test_size": 0.2,
         "preprocessing_method": "basic",
         "vectorizer": "TfidfVectorizer",
-        "model": "Linear SVC",
+        "model": "Multinomial Naive Bayes",
         "data_url": "https://media.githubusercontent.com/media/Elllmaan/Epam/refs/heads/main/train.csv"
     },
     "inference": {

@@ -107,10 +107,10 @@ This repository is dedicated to analyzing movie reviews and classifying their se
 
 Clone the repository to your local machine and navigate into the project directory:
 
-bash
+```bash
 git clone <repository-url>
 cd <repository-name>
-
+```
 
 ---
 
@@ -243,7 +243,14 @@ F1 Score: 89.37%
 
 ## 5. Configuration with settings.json
 
-The file settings.json defines important parameters for both training and inference stages. Below is an example:
+The file settings.json defines important parameters for both training and inference stages. 
+
+Here you can describe possible options for parameters, e.g.
+```
+"model": "Linear SVC", "Logistic Regression", ...
+```
+
+Below is an example:
 ```
 {
     "general": {
