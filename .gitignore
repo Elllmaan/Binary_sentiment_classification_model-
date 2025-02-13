@@ -6,6 +6,7 @@ __pycache__/
 myenv/
 venv/
 .env
+venv_final_project_Kakharmanov/
 
 # Ignore data files (but keep folder structure with .gitkeep)
 data/raw/*

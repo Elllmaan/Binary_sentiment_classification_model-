@@ -107,10 +107,10 @@ This repository is dedicated to analyzing movie reviews and classifying their se
 
 Clone the repository to your local machine and navigate into the project directory:
 
-bash
+```bash
 git clone <repository-url>
 cd <repository-name>
-
+```
 
 ---
 
@@ -243,7 +243,14 @@ F1 Score: 89.37%
 
 ## 5. Configuration with settings.json
 
-The file settings.json defines important parameters for both training and inference stages. Below is an example:
+The file settings.json defines important parameters for both training and inference stages. 
+
+Here you can describe possible options for parameters, e.g.
+```
+"model": "Linear SVC", "Logistic Regression", ...
+```
+
+Below is an example:
 ```
 {
     "general": {
@@ -321,3 +328,50 @@ A high-level overview of the main folders and files:
 ├── settings.json
 └── .env (optional)
 ```
+
+## Review
+
+Good job, Elman! All tasks are done, good exploration of the data, clear readme. Some suggestments could be found in merge request. Keep going! Good luck!
+
+#### Evaluation criteria
+
+Following things need to be checked (100 in total):
+
+1. Repository exists, doesn’t contain unnecessary files or trained models, and can be cloned using the “git clone” command
+   Important! your repository should be private, closer to checking we will inform you which usernames need to be added as collaborators); (5%) 5/5
+
+2. DS part (max 40%):
+
+   Artifacts: DS part report in README.md, notebooks;
+   Required steps with comments and conclusions:
+
+   all this should be reflected in DS part report in README.md
+
+   a) EDA (5%) 5/5
+
+   b) Feature engineering (10%) 10/10
+   - tokenization;
+   - stop-words filtering;
+   - compare stemming vs lemmatization;
+   - vectorization: compare at least 2 approaches;
+
+   c) Modeling (15%): 15/15
+   - Build baseline ML model, explore different models: at least 3 models;
+   - Reasoning on best model selection;
+   - Overall performance evaluation (best accuracy>=0.85);
+
+   d) Potential business applications and value for business; (10%) 10/10
+
+3. MLE part (max 40%):
+
+   Docker image can be built using dockerfile:
+   *[Outputs] All the necessary outputs (serialized models, predictions, plots, train results etc) should be accessible after container execution i.e., provisioning volume to container is required;
+   a) [Training] from the training directory. It should have all the necessary data and code for the training. The running container should automatically start the training process, save the trained model (in the container), and show the quality calculated on the test sample;
+   Important! final metrics for the test should be added to the README.md, and it should be reproducible and visible; (20%) 20/20
+   b) [Inference] from the inference directory. It should have all the necessary data, a trained model from the previous step and the code for inference. The running container should automatically run the trained model on the inference data and save the result in the additional file; (20%) 20/20
+
+4. README.md file is well-structured, includes DS part report and ML part (how to run guide, quickstart instruction); (10%) 9/10
+
+5. Well-structured ML project and clean code. (5%) 4/5
+
+Total 98/100
